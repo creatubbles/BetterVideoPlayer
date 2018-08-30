@@ -588,7 +588,7 @@ public class BetterVideoPlayer extends RelativeLayout implements IUserMethods,
 
   @Override
   public void start() {
-    if (mPlayer == null) return;
+    if (mPlayer == null || !mSurfaceAvailable) return;
     mPlayer.start();
     mCallback.onStarted(this);
     if (mHandler == null) mHandler = new Handler();
